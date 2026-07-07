@@ -40,6 +40,24 @@ class LoginView(APIView):
             },status = status.HTTP_200_OK)
         return Response({'error':'Invalid credentials'},status = status.HTTP_401_UNAUTHORIZED)
 
+#Category View
+class CategoryView(APIView):
+    permission_classes = [AllowAny]
+
+    def get(self,request):
+        categories = Category.objects.all()
+        serializer = CategorySerializer(categories, many = True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+#Menu item view
+class MenuItemView(APIView):
+    permission_classes = [AllowAny]
+
+    def get(self,request):
+        items = MenuItem.objects.filter(is_available = True)
+        serializer = MenuItemSerializer(items, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
 
 
 
