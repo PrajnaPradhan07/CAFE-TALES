@@ -135,8 +135,8 @@ CORS_ALLOW_ALL_ORIGIN = True
 #REST_framework
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES':(
-        'rest_framework_simplejwt.authentication.JWTAuthentication'
-    ),
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
 }
 #Media files (for menu images)
 import os
