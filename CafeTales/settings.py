@@ -136,8 +136,7 @@ CORS_ALLOW_ALL_ORIGIN = True
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES':(
         'rest_framework_simplejwt.authentication.JWTAuthentication',
-    )
-}
+    )}
 #Media files (for menu images)
 import os
 MEDIA_URL = '/media/'
